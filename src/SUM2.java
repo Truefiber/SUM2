@@ -45,22 +45,25 @@ public class SUM2 {
         Iterator<Long> iterator;
         long x;
         long y;
-        for (int i = lowerBound; i <= upperBound; i++) {
-            
-            iterator = sourceSet.iterator();
-            while (iterator.hasNext()) {
-                x = iterator.next();
-                y = i - x;
 
-                if (sourceSet.contains(y) && (y != x)) {
-                    valueT.add(i);
+
+        iterator = sourceSet.iterator();
+        while (iterator.hasNext()) {
+                x = iterator.next();
+                for (int i = lowerBound; i <= upperBound; i++) {
+                    y = i - x;
+
+                    if (sourceSet.contains(y) && (y != x)) {
+                        valueT.add(i);
+
+                    }
                 }
 
-            }
-
-
-
         }
+
+
+
+
 
         return valueT.size();
     }
